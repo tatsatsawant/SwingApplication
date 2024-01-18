@@ -1,6 +1,6 @@
 import java.awt.*;
 
-public class FrameConstructor {
+public class Theme {
 
     private Color contentBackground;
     private Color contentForeground;
@@ -11,12 +11,18 @@ public class FrameConstructor {
     private Color buttonsForeground;
     private boolean isDark;
 
-    public FrameConstructor(boolean isDark) {
+    public Theme(boolean isDark) {
         this.isDark = isDark;
         updateColorPalateLight();
     }
 
-    public void updateColorPalateLight() {
+    public Theme(){
+
+    }
+
+
+
+    protected void updateColorPalateLight() {
 
         if (isDark) {
             this.contentBackground = new Color(18, 18, 18);
@@ -65,7 +71,7 @@ public class FrameConstructor {
         return buttonsForeground;
     }
 
-    public static void main(String[] args) {
-        System.out.println("Hello");
+    public boolean isDark() {
+        return isDark;
     }
 }
