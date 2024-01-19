@@ -8,6 +8,7 @@ public class Theme {
     private final Color buttonsBackground;
     private final Color buttonsBackgroundHover;
     private final Color buttonsForeground;
+    private final Color borderBackground;
     private final boolean isDark;
 
     private static final Color DARK_CONTENT_BACKGROUND = new Color(18, 18, 18);
@@ -19,6 +20,8 @@ public class Theme {
     private static final Color DARK_BUTTONS_BACKGROUND_HOVER = new Color(135, 90, 209);
     private static final Color LIGHT_BUTTONS_BACKGROUND_HOVER = new Color(67, 160, 218);
     private static final Color COMMON_FOREGROUND = new Color(247, 247, 247);
+    private static final Color LIGHT_BORDER_BACKGROUND = new Color(43, 43, 43);
+    private static final Color DARK_BORDER_BACKGROUND = new Color(247, 247, 247);
 
     public Theme(boolean isDark) {
         this.isDark = isDark;
@@ -26,6 +29,7 @@ public class Theme {
         this.navBarBackground = isDark ? DARK_NAVBAR_BACKGROUND : LIGHT_NAVBAR_BACKGROUND;
         this.buttonsBackground = isDark ? DARK_BUTTONS_BACKGROUND : LIGHT_BUTTONS_BACKGROUND;
         this.buttonsBackgroundHover = isDark ? DARK_BUTTONS_BACKGROUND_HOVER : LIGHT_BUTTONS_BACKGROUND_HOVER;
+        this.borderBackground = isDark ? DARK_BORDER_BACKGROUND : LIGHT_BORDER_BACKGROUND;
         this.contentForeground = COMMON_FOREGROUND;
         this.navBarForeground = COMMON_FOREGROUND;
         this.buttonsForeground = COMMON_FOREGROUND;
@@ -57,5 +61,9 @@ public class Theme {
 
     public Color getButtonsForeground() {
         return buttonsForeground;
+    }
+
+    public Color getBorderBackground() {
+        return borderBackground;
     }
 }

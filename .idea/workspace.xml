@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="56b16f31-5458-47f6-b7ad-1a75d5215cd2" name="Changes" comment="updated code">
-      <change afterPath="$PROJECT_DIR$/src/AppFrame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ButtonConstructor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/PanelConstructor.java" afterDir="false" />
+    <list default="true" id="56b16f31-5458-47f6-b7ad-1a75d5215cd2" name="Changes" comment="added button panel constructor">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Theme.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Theme.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PanelConstructor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PanelConstructor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +42,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/Programming/Java Projects/Archive/JavaLogIn",
+    "last_opened_file_path": "D:/Programming/Java Projects/BMS",
     "onboarding.tips.debug.path": "D:/Programming/Java Projects/FrontEndUsingSwing/src/Main.java"
   }
 }]]></component>
@@ -97,13 +94,31 @@
       <option name="project" value="LOCAL" />
       <updated>1705643492120</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="added panel constructor">
+      <option name="closed" value="true" />
+      <created>1705649668371</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1705649668371</updated>
+    </task>
+    <task id="LOCAL-00006" summary="added button panel constructor">
+      <option name="closed" value="true" />
+      <created>1705651677960</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1705651677960</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="updated color palate" />
     <MESSAGE value="created Button" />
     <MESSAGE value="updated code" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated code" />
+    <MESSAGE value="added panel constructor" />
+    <MESSAGE value="added button panel constructor" />
+    <option name="LAST_COMMIT_MESSAGE" value="added button panel constructor" />
   </component>
 </project>
