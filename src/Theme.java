@@ -10,25 +10,25 @@ public class Theme {
     private final Color buttonsForeground;
     private final boolean isDark;
 
+    private static final Color DARK_CONTENT_BACKGROUND = new Color(18, 18, 18);
+    private static final Color LIGHT_CONTENT_BACKGROUND = new Color(255, 255, 255);
+    private static final Color DARK_NAVBAR_BACKGROUND = new Color(43, 43, 43);
+    private static final Color LIGHT_NAVBAR_BACKGROUND = new Color(240, 245, 255);
+    private static final Color DARK_BUTTONS_BACKGROUND = new Color(102, 68, 158);
+    private static final Color LIGHT_BUTTONS_BACKGROUND = new Color(78, 175, 255);
+    private static final Color DARK_BUTTONS_BACKGROUND_HOVER = new Color(135, 90, 209);
+    private static final Color LIGHT_BUTTONS_BACKGROUND_HOVER = new Color(67, 160, 218);
+    private static final Color COMMON_FOREGROUND = new Color(247, 247, 247);
+
     public Theme(boolean isDark) {
         this.isDark = isDark;
-        if (isDark) {
-            // Initialize dark mode colors
-            this.contentBackground = new Color(18, 18, 18);
-            this.navBarBackground = new Color(43, 43, 43);
-            this.buttonsBackground = new Color(102, 68, 158);
-            this.buttonsBackgroundHover = new Color(135, 90, 209);
-        } else {
-            // Initialize light mode colors
-            this.contentBackground = new Color(255, 255, 255);
-            this.navBarBackground = new Color(240, 245, 255);
-            this.buttonsBackground = new Color(78, 175, 255);
-            this.buttonsBackgroundHover = new Color(67, 160, 218);
-        }
-        // Initialize common colors
-        this.contentForeground = new Color(247, 247, 247);
-        this.navBarForeground = new Color(247, 247, 247);
-        this.buttonsForeground = new Color(247, 247, 247);
+        this.contentBackground = isDark ? DARK_CONTENT_BACKGROUND : LIGHT_CONTENT_BACKGROUND;
+        this.navBarBackground = isDark ? DARK_NAVBAR_BACKGROUND : LIGHT_NAVBAR_BACKGROUND;
+        this.buttonsBackground = isDark ? DARK_BUTTONS_BACKGROUND : LIGHT_BUTTONS_BACKGROUND;
+        this.buttonsBackgroundHover = isDark ? DARK_BUTTONS_BACKGROUND_HOVER : LIGHT_BUTTONS_BACKGROUND_HOVER;
+        this.contentForeground = COMMON_FOREGROUND;
+        this.navBarForeground = COMMON_FOREGROUND;
+        this.buttonsForeground = COMMON_FOREGROUND;
     }
 
     public Color getContentBackground() {
@@ -58,9 +58,4 @@ public class Theme {
     public Color getButtonsForeground() {
         return buttonsForeground;
     }
-
-    public boolean isDark() {
-        return isDark;
-    }
 }
-
