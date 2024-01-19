@@ -24,6 +24,7 @@ public class PanelConstructor {
         panel.setBackground(theme.getNavBarBackground());
         panel.setForeground(theme.getNavBarForeground());
         panel.setBorder(createDefaultBorder());
+
         if (enableHover) {
             panel.addMouseListener(createMouseAdapter(panel));
         }

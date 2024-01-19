@@ -1,16 +1,6 @@
 import java.awt.Color;
 
 public class Theme {
-    private final Color contentBackground;
-    private final Color contentForeground;
-    private final Color navBarBackground;
-    private final Color navBarForeground;
-    private final Color buttonsBackground;
-    private final Color buttonsBackgroundHover;
-    private final Color buttonsForeground;
-    private final Color borderBackground;
-    private final boolean isDark;
-
     private static final Color DARK_CONTENT_BACKGROUND = new Color(18, 18, 18);
     private static final Color LIGHT_CONTENT_BACKGROUND = new Color(255, 255, 255);
     private static final Color DARK_NAVBAR_BACKGROUND = new Color(43, 43, 43);
@@ -22,6 +12,15 @@ public class Theme {
     private static final Color COMMON_FOREGROUND = new Color(247, 247, 247);
     private static final Color LIGHT_BORDER_BACKGROUND = new Color(43, 43, 43);
     private static final Color DARK_BORDER_BACKGROUND = new Color(247, 247, 247);
+    private final Color contentBackground;
+    private final Color contentForeground;
+    private final Color navBarBackground;
+    private final Color navBarForeground;
+    private final Color buttonsBackground;
+    private final Color buttonsBackgroundHover;
+    private final Color buttonsForeground;
+    private final Color borderBackground;
+    private final boolean isDark;
 
     public Theme(boolean isDark) {
         this.isDark = isDark;

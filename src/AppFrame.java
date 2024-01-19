@@ -4,15 +4,15 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class AppFrame extends JFrame {
-    private Theme currentTheme = ThemeManager.getLightTheme();
     private final ButtonConstructor buttonConstructor;
-    private PanelConstructor panelConstructor;
-    private JPanel contentPanel, buttonPanel;
-
+    private final PanelConstructor panelConstructor;
+    private final JPanel homePanel, aboutPanel, buttonPanel;
+    private final JLabel homeLabel, aboutLabel;
     private final AbstractButton home, about, theme;
+    private Theme currentTheme = ThemeManager.getLightTheme();
 
     public AppFrame() {
-        setTitle("Theme Switcher");
+        setTitle("Java Swing Application");
         setSize(700, 600);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -24,13 +24,29 @@ public class AppFrame extends JFrame {
         buttonConstructor = new ButtonConstructor(currentTheme);
         panelConstructor = new PanelConstructor(currentTheme);
 
-        contentPanel = panelConstructor.addPanel("contentPanel", 600, 400, true);
+        homePanel = panelConstructor.addPanel("contentPanel", 600, 400, true);
+        homePanel.setVisible(true);
         gbc.gridx = 0;
         gbc.gridy = 1;
-        add(contentPanel, gbc);
+        add(homePanel, gbc);
+
+        homeLabel = new JLabel("Welcome To Home!");
+        homeLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        homeLabel.setFont(new Font("Raleway", Font.ITALIC, 40));
+        homePanel.add(homeLabel, BorderLayout.CENTER);
+
+        aboutPanel = panelConstructor.addPanel("aboutPanel", 600, 400, true);
+        setVisible(false);
+        gbc.gridx = 0;
+        gbc.gridy = 1;
+        add(aboutPanel, gbc);
+
+        aboutLabel = new JLabel("About....");
+        aboutLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        aboutLabel.setFont(new Font("Raleway", Font.ITALIC, 40));
+        aboutPanel.add(aboutLabel, BorderLayout.CENTER);
 
         buttonPanel = panelConstructor.addPanel("buttonPanel", 600, 50, false);
-//        buttonPanel.setBackground(null);
         buttonPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 10));
         gbc.gridx = 0;
         gbc.gridy = 0;
@@ -38,13 +54,29 @@ public class AppFrame extends JFrame {
 
         home = buttonConstructor.addButton("home", "HOME", 80, 30, "JButton");
         buttonPanel.add(home);
+        home.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Show homePanel and hide aboutPanel
+                homePanel.setVisible(true);
+                aboutPanel.setVisible(false);
+            }
+        });
 
         about = buttonConstructor.addButton("about", "ABOUT", 80, 30, "JButton");
         buttonPanel.add(about);
+        about.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Show aboutPanel and hide homePanel
+                aboutPanel.setVisible(true);
+                homePanel.setVisible(false);
+            }
+        });
+
 
         theme = buttonConstructor.addButton("theme", "THEME", 80, 30, "JButton");
         buttonPanel.add(theme);
-
         theme.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -64,9 +96,13 @@ public class AppFrame extends JFrame {
         buttonConstructor.updateButtonUI(home, currentTheme);
         buttonConstructor.updateButtonUI(about, currentTheme);
         buttonConstructor.updateButtonUI(theme, currentTheme);
-        panelConstructor.updatePanelUI(contentPanel, currentTheme);
+        panelConstructor.updatePanelUI(homePanel, currentTheme);
         panelConstructor.updatePanelUI(buttonPanel, currentTheme);
+        panelConstructor.updatePanelUI(aboutPanel, currentTheme);
+        aboutLabel.setForeground(currentTheme.getBorderBackground());
+        homeLabel.setForeground(currentTheme.getBorderBackground());
     }
+
     public void showFrame() {
         setVisible(true);
     }
