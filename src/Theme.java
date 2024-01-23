@@ -20,10 +20,8 @@ public class Theme {
     private final Color buttonsBackgroundHover;
     private final Color buttonsForeground;
     private final Color borderBackground;
-    private final boolean isDark;
 
     public Theme(boolean isDark) {
-        this.isDark = isDark;
         this.contentBackground = isDark ? DARK_CONTENT_BACKGROUND : LIGHT_CONTENT_BACKGROUND;
         this.navBarBackground = isDark ? DARK_NAVBAR_BACKGROUND : LIGHT_NAVBAR_BACKGROUND;
         this.buttonsBackground = isDark ? DARK_BUTTONS_BACKGROUND : LIGHT_BUTTONS_BACKGROUND;
