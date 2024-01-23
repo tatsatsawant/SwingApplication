@@ -22,7 +22,8 @@ public class AppFrame extends JFrame {
         buttonConstructor = new ButtonConstructor(currentTheme);
         panelConstructor = new PanelConstructor(currentTheme);
 
-        homePanel = panelConstructor.addPanel("contentPanel", 600, 400, true);
+        homePanel = panelConstructor.addPanel("contentPanel",
+                600, 400, true);
         homePanel.setVisible(true);
         gbc.gridx = 0;
         gbc.gridy = 1;
@@ -33,7 +34,8 @@ public class AppFrame extends JFrame {
         homeLabel.setFont(new Font("Raleway", Font.ITALIC, 40));
         homePanel.add(homeLabel, BorderLayout.CENTER);
 
-        aboutPanel = panelConstructor.addPanel("aboutPanel", 600, 400, true);
+        aboutPanel = panelConstructor.addPanel("aboutPanel",
+                600, 400, true);
         setVisible(false);
         gbc.gridx = 0;
         gbc.gridy = 1;
@@ -44,21 +46,25 @@ public class AppFrame extends JFrame {
         aboutLabel.setFont(new Font("Raleway", Font.ITALIC, 40));
         aboutPanel.add(aboutLabel, BorderLayout.CENTER);
 
-        buttonPanel = panelConstructor.addPanel("buttonPanel", 600, 50, false);
+        buttonPanel = panelConstructor.addPanel("buttonPanel",
+                600, 50, false);
         buttonPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 10));
         gbc.gridx = 0;
         gbc.gridy = 0;
         add(buttonPanel, gbc);
 
-        home = buttonConstructor.addButton("home", "HOME", 80, 30, "JButton");
+        home = buttonConstructor.addButton("home",
+                "HOME", 80, 30, "JButton");
         buttonPanel.add(home);
         home.addActionListener(_ -> handleButtonClick("home"));
 
-        about = buttonConstructor.addButton("about", "ABOUT", 80, 30, "JButton");
+        about = buttonConstructor.addButton("about",
+                "ABOUT", 80, 30, "JButton");
         buttonPanel.add(about);
         about.addActionListener(_ -> handleButtonClick("about"));
 
-        theme = buttonConstructor.addButton("theme", "THEME", 80, 30, "JButton");
+        theme = buttonConstructor.addButton("theme",
+                "THEME", 80, 30, "JButton");
         buttonPanel.add(theme);
         theme.addActionListener(_ -> handleButtonClick("theme"));
 
@@ -78,7 +84,8 @@ public class AppFrame extends JFrame {
                 homePanel.setVisible(false);
                 break;
             case "theme":
-                currentTheme = (currentTheme == ThemeManager.getDarkTheme()) ? ThemeManager.getLightTheme() : ThemeManager.getDarkTheme();
+                currentTheme = (currentTheme == ThemeManager.getDarkTheme()) ?
+                        ThemeManager.getLightTheme() : ThemeManager.getDarkTheme();
                 updateUI();
                 break;
             // Add more cases if needed for additional buttons

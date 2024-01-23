@@ -31,7 +31,8 @@ public class PanelConstructor {
     }
 
     private Border createDefaultBorder() {
-        return BorderFactory.createLineBorder(theme.getBorderBackground()); // You can customize the border further if needed
+        return BorderFactory.createLineBorder(theme.getBorderBackground());
+        // You can customize the border further if needed
     }
 
     private MouseAdapter createMouseAdapter(JPanel panel) {
