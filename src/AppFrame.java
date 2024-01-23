@@ -1,7 +1,5 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class AppFrame extends JFrame {
     private final ButtonConstructor buttonConstructor;
@@ -54,41 +52,37 @@ public class AppFrame extends JFrame {
 
         home = buttonConstructor.addButton("home", "HOME", 80, 30, "JButton");
         buttonPanel.add(home);
-        home.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                // Show homePanel and hide aboutPanel
-                homePanel.setVisible(true);
-                aboutPanel.setVisible(false);
-            }
-        });
+        home.addActionListener(_ -> handleButtonClick("home"));
 
         about = buttonConstructor.addButton("about", "ABOUT", 80, 30, "JButton");
         buttonPanel.add(about);
-        about.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                // Show aboutPanel and hide homePanel
-                aboutPanel.setVisible(true);
-                homePanel.setVisible(false);
-            }
-        });
-
+        about.addActionListener(_ -> handleButtonClick("about"));
 
         theme = buttonConstructor.addButton("theme", "THEME", 80, 30, "JButton");
         buttonPanel.add(theme);
-        theme.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                // Toggle between dark and light themes
-                currentTheme = (currentTheme == ThemeManager.getDarkTheme()) ? ThemeManager.getLightTheme() : ThemeManager.getDarkTheme();
-                updateUI();
-            }
-        });
+        theme.addActionListener(_ -> handleButtonClick("theme"));
 
         updateUI(); // Initial UI setup
 
         setVisible(true);
+    }
+
+    private void handleButtonClick(String buttonName) {
+        switch (buttonName) {
+            case "home":
+                homePanel.setVisible(true);
+                aboutPanel.setVisible(false);
+                break;
+            case "about":
+                aboutPanel.setVisible(true);
+                homePanel.setVisible(false);
+                break;
+            case "theme":
+                currentTheme = (currentTheme == ThemeManager.getDarkTheme()) ? ThemeManager.getLightTheme() : ThemeManager.getDarkTheme();
+                updateUI();
+                break;
+            // Add more cases if needed for additional buttons
+        }
     }
 
     private void updateUI() {
